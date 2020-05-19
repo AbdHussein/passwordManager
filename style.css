@@ -1,0 +1,97 @@
+body{
+    text-align: center;
+    background-color: dimgray;
+    font-family: 'Libre Baskerville', serif;
+    color: white;
+}
+.input{
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    width: 20rem;
+}
+.PasswordInput{
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    width: 14rem;
+}
+.header{
+    text-align: center;
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 50px;    
+    border: 0px;
+    border-bottom: 1px;
+    border-color: white;    
+    border-style: solid;
+    padding-bottom: 10px;
+}
+.line{
+    height: 2px;
+    background-color: white
+}
+.mainDiv{
+    height: 500px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px; 
+    border-radius: 15px;   
+}
+.passwordDiv{    
+    text-align: center;
+    margin: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px; 
+    border-radius: 15px; 
+    padding: 50px;
+    width: 40%;
+    float: left;    
+}
+
+.form {
+    display: grid;
+    grid-template-columns: auto ;
+    row-gap: 1rem;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+.img{
+    background-color: dimgray;
+    margin: 15px;
+    border-radius: 10px;
+}
+.btn {
+    grid-column: span 2;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: .5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1rem;        
+}
+
+  .btn:hover {
+    background-color: #FFFFFF33;
+  }
+.displayDiv{
+    text-align: center;
+    width: 40%;
+    margin: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px; 
+    border-radius: 15px; 
+    padding: 50px;
+    float: right;    
+}
+
+#passwordDisplay{
+    background-color: white;
+    padding: 10px;
+    margin: 40px;
+    border-radius: 15px;
+}
