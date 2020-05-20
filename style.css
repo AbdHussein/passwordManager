@@ -32,11 +32,12 @@ body{
     background-color: white
 }
 .mainDiv{
-    height: 500px;
+    min-height: 370px;
     border-style: solid;
     border-color: white;
     border-width: 1px; 
     border-radius: 15px;   
+    overflow: hidden;
 }
 .passwordDiv{    
     text-align: center;
@@ -50,7 +51,7 @@ body{
     float: left;    
 }
 
-.form {
+.password {
     display: grid;
     grid-template-columns: auto ;
     row-gap: 1rem;
@@ -58,11 +59,20 @@ body{
     justify-content: center;
     align-items: center;
   }
-.img{
-    background-color: dimgray;
-    margin: 15px;
-    border-radius: 10px;
-}
+  .item{    
+        min-height: 100px;
+        margin: 15px;
+        border-style: solid;
+        border-color: white;
+        border-width: 1px; 
+        border-radius: 15px;   
+        overflow: hidden;    
+  }
+  .span{
+      margin: 5px;
+      text-align: center;
+      vertical-align: middle;
+  }
 .btn {
     grid-column: span 2;
     background-color: transparent;

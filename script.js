@@ -4,7 +4,7 @@ var password = document.getElementById('password');
 var generatePass = document.getElementById('generatePassword');
 var reveal = document.getElementById('reveal');
 var save = document.getElementById('save');
-
+//--------------------
 var data = [];
 var newData = function(url,user,pass){
     return{
@@ -25,17 +25,24 @@ reveal.onclick = function(){
         password.setAttribute('type','text');
     }   
 }
-
+function append(item){
+    if(!document.getElementById('noPasswords').hasAttribute('hidden')){
+        document.getElementById('noPasswords').setAttribute('hidden');
+    }
+    var div = document.createElement('DIV');
+    //TODO create a new <div> for each new element that contains website, email and password.
+    document.getElementById('display').appendChild(div);
+}
 save.onclick = function(){
+    
     data.push(newData(website.value,username.value,password.value));
     console.log(data);    
     website.value = '';
     username.value = '';
     password.value  = '';
+    append(data[data.length-1]);
 }
 //----------------------
-
-
 function arrayFromLowToHigh(low, high) {
     var array = []
     for (var i = low; i <= high; i++) {
