@@ -17,15 +17,13 @@ var newData = function(url,user,pass){
 generatePass.onclick = function(){    
     password.value = generatePassword(true,true,true);
 }
-
-reveal.onclick = function(){
+reveal.onclick = function() {
     if(password.type === 'text'){
         password.setAttribute('type','password');
     } else {
         password.setAttribute('type','text');
     }   
 }
-
 function append(item){
     if(!document.getElementById('noPasswords').hasAttribute('hidden')){
         document.getElementById('noPasswords').hidden = true;
@@ -33,18 +31,22 @@ function append(item){
     var div = document.createElement('DIV');
     div.classList.add('div');
       //---------
-      var h5_website = document.createElement('H5');
-      var h5_email = document.createElement('H5');
+      var website_Label = document.createElement('LABEL');
+      var website_input = document.createElement('INPUT');
+      var email_Label = document.createElement('LABEL');
+      var email_input = document.createElement('INPUT');
       var pass= document.createElement('INPUT');
       var showPass = document.createElement('BUTTON');
       var deleteBtn = document.createElement('BUTTON');
+      var EditBtn = document.createElement('BUTTON');
       pass.type = 'password';
       pass.readonly = true;     
       //---------
+      EditBtn.classList.add('btn');
       deleteBtn.classList.add('btn');
       showPass.classList.add('btn');
-      h5_website.classList.add('h5');
-      h5_email.classList.add('h5');
+      website_input.classList.add('pass');
+      email_input.classList.add('pass');
       pass.classList.add('pass');
       showPass.onclick = function(){
         if(pass.type === 'text'){
@@ -54,10 +56,13 @@ function append(item){
         }   
     }
       //---------
+      EditBtn.innerHTML = 'Edit';
       deleteBtn.innerHTML = 'Delete';
       showPass.innerHTML = 'Reveal / Hide';
-      h5_website.innerHTML = 'URL: <br>'+ item.website; 
-      h5_email.innerHTML = 'USERNAME: <br>'+ item.username;
+      website_Label.innerHTML = 'URL : ';
+      email_Label.innerHTML = '<br>Email : ';
+      website_input.value = item.website; 
+      email_input.value = item.username;
       pass.value = item.password;      
       //--------
       deleteBtn.onclick = function(){
@@ -69,12 +74,25 @@ function append(item){
           document.getElementById('noPasswords').hidden = false;
         }
       }
+
+      EditBtn.onclick = function(){
+        var index = data.indexOf(item);
+        item.website = website_input.value;
+        item.username = email_input.value;
+        item.password = pass.value;
+        console.log(item);  
+        data.splice(index,1,item);
+        console.log(data);                
+      }
       //--------
-      div.appendChild(h5_website);
-      div.appendChild(h5_email);
+      div.appendChild(website_Label);
+      div.appendChild(website_input);
+      div.appendChild(email_Label);      
+      div.appendChild(email_input);
       div.appendChild(pass);
       div.appendChild(showPass);
       div.appendChild(deleteBtn);
+      div.appendChild(EditBtn);
       //---------
       document.getElementById('display').appendChild(div);
 }
