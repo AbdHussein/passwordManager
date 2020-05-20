@@ -25,16 +25,61 @@ reveal.onclick = function(){
         password.setAttribute('type','text');
     }   
 }
+
 function append(item){
     if(!document.getElementById('noPasswords').hasAttribute('hidden')){
-        document.getElementById('noPasswords').setAttribute('hidden');
+        document.getElementById('noPasswords').hidden = true;
     }
     var div = document.createElement('DIV');
-    //TODO create a new <div> for each new element that contains website, email and password.
-    document.getElementById('display').appendChild(div);
+    div.classList.add('div');
+      //---------
+      var h5_website = document.createElement('H5');
+      var h5_email = document.createElement('H5');
+      var pass= document.createElement('INPUT');
+      var showPass = document.createElement('BUTTON');
+      var deleteBtn = document.createElement('BUTTON');
+      pass.type = 'password';
+      pass.readonly = true;     
+      //---------
+      deleteBtn.classList.add('btn');
+      showPass.classList.add('btn');
+      h5_website.classList.add('h5');
+      h5_email.classList.add('h5');
+      pass.classList.add('pass');
+      showPass.onclick = function(){
+        if(pass.type === 'text'){
+          pass.setAttribute('type','password');
+        } else {
+          pass.setAttribute('type','text');
+        }   
+    }
+      //---------
+      deleteBtn.innerHTML = 'Delete';
+      showPass.innerHTML = 'Reveal / Hide';
+      h5_website.innerHTML = 'URL: <br>'+ item.website; 
+      h5_email.innerHTML = 'USERNAME: <br>'+ item.username;
+      pass.value = item.password;      
+      //--------
+      deleteBtn.onclick = function(){
+        div.remove();
+        var index = data.indexOf(item);
+        data.splice(index,1);
+        console.log(data.length);        
+        if(data.length === 0){
+          document.getElementById('noPasswords').hidden = false;
+        }
+      }
+      //--------
+      div.appendChild(h5_website);
+      div.appendChild(h5_email);
+      div.appendChild(pass);
+      div.appendChild(showPass);
+      div.appendChild(deleteBtn);
+      //---------
+      document.getElementById('display').appendChild(div);
 }
-save.onclick = function(){
-    
+//--------------
+save.onclick = function(){    
     data.push(newData(website.value,username.value,password.value));
     console.log(data);    
     website.value = '';
