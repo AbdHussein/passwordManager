@@ -4,6 +4,7 @@ var password = document.getElementById('password');
 var generatePass = document.getElementById('generatePassword');
 var reveal = document.getElementById('reveal');
 var save = document.getElementById('save');
+var snack = document.createElement('DIV');
 //--------------------
 var data = [];
 var newData = function(url,user,pass){
@@ -35,6 +36,7 @@ function append(item){
       var website_input = document.createElement('INPUT');
       var email_Label = document.createElement('LABEL');
       var email_input = document.createElement('INPUT');
+      var pass_Label = document.createElement('LABEL');
       var pass= document.createElement('INPUT');
       var showPass = document.createElement('BUTTON');
       var deleteBtn = document.createElement('BUTTON');
@@ -42,9 +44,9 @@ function append(item){
       pass.type = 'password';
       pass.readonly = true;     
       //---------
-      EditBtn.classList.add('btn');
-      deleteBtn.classList.add('btn');
-      showPass.classList.add('btn');
+      EditBtn.classList.add('btn-edit');
+      deleteBtn.classList.add('btn-delete');
+      showPass.classList.add('btn-show');
       website_input.classList.add('pass');
       email_input.classList.add('pass');
       pass.classList.add('pass');
@@ -61,6 +63,7 @@ function append(item){
       showPass.innerHTML = 'Reveal / Hide';
       website_Label.innerHTML = 'URL : ';
       email_Label.innerHTML = '<br>Email : ';
+      pass_Label.innerHTML = '<br>Password : ';
       website_input.value = item.website; 
       email_input.value = item.username;
       pass.value = item.password;      
@@ -82,13 +85,19 @@ function append(item){
         item.password = pass.value;
         console.log(item);  
         data.splice(index,1,item);
-        console.log(data);                
+        console.log(data); 
+        snack.setAttribute('id','snackbar');
+        snack.innerHTML = 'Data Updated Successfully';        
+        document.body.appendChild(snack); 
+        snack.className = "show";     
+        setTimeout(function(){ snack.className = snack.className.replace("show", ""); }, 3000);      
       }
       //--------
       div.appendChild(website_Label);
       div.appendChild(website_input);
       div.appendChild(email_Label);      
       div.appendChild(email_input);
+      div.appendChild(pass_Label);
       div.appendChild(pass);
       div.appendChild(showPass);
       div.appendChild(deleteBtn);

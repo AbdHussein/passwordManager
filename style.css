@@ -1,40 +1,46 @@
 body{
     text-align: center;
-    background-color: dimgray;
+    background-color: whitesmoke;
     font-family: 'Libre Baskerville', serif;
-    color: white;
+    color: dimgray;
 }
-.input{
-    border-radius: 15px;
-    padding: 5px;
+.input{    
+    background-color: transparent;
+    padding: 10px;
     margin: 5px;
-    width: 20rem;
+    width: 20rem;   
+    border: none;
+    border-bottom: dimgray;
+    border-bottom-style:solid;
+    border-bottom-width:1px ;
 }
-.PasswordInput{
-    border-radius: 15px;
+.PasswordInput{    
     padding: 5px;
     margin: 5px;
     width: 14rem;
+    border: none;
+    border-bottom: dimgray;
+    border-bottom-style:solid;
+    border-bottom-width:1px ;
 }
 .header{
     text-align: center;
-    color: white;
-    font-family: 'Libre Baskerville', serif;
+    color: dimgray;    
     font-size: 50px;    
     border: 0px;
     border-bottom: 1px;
-    border-color: white;    
+    border-color: dimgray;    
     border-style: solid;
     padding-bottom: 10px;
 }
 .line{
     height: 2px;
-    background-color: white
+    background-color: dimgray;
 }
 .mainDiv{
     min-height: 370px;
     border-style: solid;
-    border-color: white;
+    border-color: dimgray;
     border-width: 1px; 
     border-radius: 15px;   
     overflow: hidden;
@@ -43,14 +49,13 @@ body{
     text-align: center;
     margin: 10px;
     border-style: solid;
-    border-color: white;
+    border-color: dimgray;
     border-width: 1px; 
     border-radius: 15px; 
     padding: 50px;
     width: 40%;
     float: left;    
 }
-
 .password {
     display: grid;
     grid-template-columns: auto ;
@@ -58,50 +63,34 @@ body{
     column-gap: 3rem;
     justify-content: center;
     align-items: center;
-  }
-  .item{    
+}
+.item{    
         min-height: 100px;
         margin: 15px;
         border-style: solid;
-        border-color: white;
+        border-color: dimgray;
         border-width: 1px; 
         border-radius: 15px;   
         overflow: hidden;    
-  }
-  .span{
+}
+.span{
       margin: 5px;
       text-align: center;
       vertical-align: middle;
-  }
-.btn {
-    margin: 5px;
-    grid-column: span 2;
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: .5rem 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 1rem;        
 }
-
-  .btn:hover {
-    background-color: #FFFFFF33;
-  }
 .displayDiv{
     text-align: center;
     width: 40%;
     margin: 10px;
     border-style: solid;
-    border-color: white;
+    border-color: dimgray;
     border-width: 1px; 
     border-radius: 15px; 
     padding: 50px;
     float: right;    
 }
-
 #passwordDisplay{
-    background-color: white;
+    background-color: dimgray;
     padding: 10px;
     margin: 40px;
     border-radius: 15px;
@@ -110,13 +99,13 @@ body{
     text-align: center;    
     margin: 10px;
     border-style: solid;
-    border-color: white;
+    border-color: dimgray;
     border-width: 1px; 
     border-radius: 15px; 
     padding: 15px;
 }
 label{
-    color: white;
+    color: dimgray;
 }
 .h5{
     border-radius: 15px;
@@ -126,11 +115,62 @@ label{
     background-color: white;    
 }
 .pass{
-    cursor: pointer;
-    border-radius: 15px;
+    cursor: pointer;    
     color: black;
-    padding: 15px;
+    padding: 10px;
     margin: 5px;   
-    background-color: white;  
-    width: 310px;
+    background-color: transparent;  
+    width: 290px;
+    border: none;
+    border-bottom: dimgray;
+    border-bottom-style:solid;
+    border-bottom-width:1px ;
+}
+.btn-success{
+    margin: 2px;
+    background-color: rgb(28, 184, 65); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); 
+}
+.btn-delete{
+    margin: 2px;
+    background-color: rgb(202, 60, 60); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
+.btn-edit{
+    margin: 2px;
+    background-color: dimgray;   
+    border-color: transparent;
+    border-width: 2px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center; 
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
+.btn-show{
+    margin: 2px;
+    background-color: dimgray; 
+    border-width: 2px;
+    color: whitesmoke;
+    padding: 15px 32px;
+    text-align: center; 
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
 }
